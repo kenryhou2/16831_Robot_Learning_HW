@@ -80,8 +80,13 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
         else:
             observation = obs[None]
 
-        # TODO return the action that the policy prescribes
-        raise NotImplementedError
+        # DONE return the action that the policy prescribes
+        observation = ptu.from_numpy(observation)
+        action_distribution = self.forward(observation)
+        action = action_distribution.sample()
+        action = ptu.to_numpy(action)
+        return action
+
 
     # update/train this policy
     def update(self, observations, actions, **kwargs):
@@ -93,7 +98,29 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
     # return more flexible objects, such as a
     # `torch.distributions.Distribution` object. It's up to you!
     def forward(self, observation: torch.FloatTensor) -> Any:
-        raise NotImplementedError
+        #Pass Observation through MLP and outputs an action mean.
+        #Returns torch.distribution.Distribution object.
+        
+        #for discrete action space
+        if self.discrete:
+            logits = self.logits_na(observation)
+            action_distribution = distributions.Categorical(logits=logits)
+
+        else: # Continuous action space
+            #Note: observation shape: (batch_size, ob_dim)
+            batch_mean = self.mean_net(observation) #shape: (batch_size, ac_dim)
+            scale_triangular = torch.diag(torch.exp(self.logstd)) #shape: (ac_dim, ac_dim)
+            batch_size = observation.shape[0]
+            batch_scale = scale_triangular.repeat(batch_size, 1, 1) #shape: (batch_size, ac_dim, ac_dim)
+            action_distribution = distributions.MultivariateNormal(
+                batch_mean, scale_tril=batch_scale
+            )
+            
+
+
+            
+        return action_distribution
+        
 
 
 #####################################################
@@ -108,8 +135,24 @@ class MLPPolicySL(MLPPolicy):
             self, observations, actions,
             adv_n=None, acs_labels_na=None, qvals=None
     ):
-        # TODO: update the policy and return the loss
-        loss = TODO
+        # DONE: update the policy and return the loss
+        # loss = DONE
+        observations = ptu.from_numpy(observations)
+        actions = ptu.from_numpy(actions)
+        
+        # Forward pass
+        action_dist = self.forward(observations)
+
+        # Compute loss
+        if self.discrete:
+            loss = F.cross_entropy(action_dist.logits, actions.long())
+        else:
+            loss = -action_dist.log_prob(actions).sum()
+        
+        # Backward pass
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
 
         return {
             # You can add extra logging information here, but keep this line
