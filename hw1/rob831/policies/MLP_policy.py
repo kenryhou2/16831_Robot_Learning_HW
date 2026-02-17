@@ -82,7 +82,8 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
 
         # DONE return the action that the policy prescribes
         observation = ptu.from_numpy(observation)
-        action_distribution = self.forward(observation)
+        # action_distribution = self.forward(observation)
+        action_distribution = self(observation)
         action = action_distribution.sample()
         action = ptu.to_numpy(action)
         return action
@@ -115,10 +116,6 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
             action_distribution = distributions.MultivariateNormal(
                 batch_mean, scale_tril=batch_scale
             )
-            
-
-
-            
         return action_distribution
         
 
