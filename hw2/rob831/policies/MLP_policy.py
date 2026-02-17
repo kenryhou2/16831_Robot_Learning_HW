@@ -87,8 +87,20 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
 
     # query the policy with observation(s) to get selected action(s)
     def get_action(self, obs: np.ndarray) -> np.ndarray:
-        # TODO: get this from hw1
-        raise NotImplementedError
+        # DONE: get this from hw1
+        if len(obs.shape) > 1:
+            observation = obs
+        else:
+            observation = obs[None]
+
+        # DONE return the action that the policy prescribes
+        observation = ptu.from_numpy(observation)
+        # action_distribution = self.forward(observation)
+        action_distribution = self(observation)
+        action = action_distribution.sample()
+        action = ptu.to_numpy(action)
+        return action
+        
 
     # update/train this policy
     def update(self, observations, actions, **kwargs):
@@ -101,8 +113,25 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
     # return more flexible objects, such as a
     # `torch.distributions.Distribution` object. It's up to you!
     def forward(self, observation: torch.FloatTensor):
-        # TODO: get this from hw1
-        raise NotImplementedError
+        # DONE: get this from hw1
+        #Pass Observation through MLP and outputs an action mean.
+        #Returns torch.distribution.Distribution object.
+        
+        #for discrete action space
+        if self.discrete:
+            logits = self.logits_na(observation)
+            action_distribution = distributions.Categorical(logits=logits)
+
+        else: # Continuous action space
+            #Note: observation shape: (batch_size, ob_dim)
+            batch_mean = self.mean_net(observation) #shape: (batch_size, ac_dim)
+            scale_triangular = torch.diag(torch.exp(self.logstd)) #shape: (ac_dim, ac_dim)
+            batch_size = observation.shape[0]
+            batch_scale = scale_triangular.repeat(batch_size, 1, 1) #shape: (batch_size, ac_dim, ac_dim)
+            action_distribution = distributions.MultivariateNormal(
+                batch_mean, scale_tril=batch_scale
+            )
+        return action_distribution
 
 #####################################################
 #####################################################
