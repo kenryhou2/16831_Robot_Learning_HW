@@ -40,14 +40,24 @@ class PGAgent(BaseAgent):
             and the calculated qvals/advantages that come from the seen rewards.
         """
 
-        # TODO: update the PG actor/policy using the given batch of data, and
+        # DONE: update the PG actor/policy using the given batch of data, and
         # return the train_log obtained from updating the policy
 
         # HINT1: use helper functions to compute qvals and advantages
         # HINT2: look at the MLPPolicyPG class for how to update the policy
             # and obtain a train_log
 
-        raise NotImplementedError
+        q_values = self.calculate_q_vals(rewards_list)
+        advantages = self.estimate_advantage(observations, rewards_list, q_values, terminals)
+        
+        # Multi-step PG: take multiple gradient steps on the same batch TODO
+        total_policy_loss = 0.0
+        for step in range(self.num_gradient_steps):
+            train_log = self.actor.update(observations, actions, advantages, q_values)
+            total_policy_loss += train_log['Training Loss']
+        
+        # Average the loss across gradient steps for logging
+        train_log['Training Loss'] = total_policy_loss / self.num_gradient_steps
 
         return train_log
 
@@ -75,12 +85,13 @@ class PGAgent(BaseAgent):
 
         if not self.reward_to_go:
             #use the whole traj for each timestep
-            raise NotImplementedError
+            q_values = np.concatenate([self._discounted_return(traj_reward) for traj_reward in rewards_list])
+
 
         # Case 2: reward-to-go PG
         # Estimate Q^{pi}(s_t, a_t) by the discounted sum of rewards starting from t
         else:
-            raise NotImplementedError
+            q_values = np.concatenate([self._discounted_cumsum(traj_reward) for traj_reward in rewards_list])
 
         return q_values  # return an array
 
@@ -98,12 +109,14 @@ class PGAgent(BaseAgent):
             ## ensure that the value predictions and q_values have the same dimensionality
             ## to prevent silent broadcasting errors
             assert values_normalized.ndim == q_values.ndim
-            ## TODO: values were trained with standardized q_values, so ensure
+            ## DONE: values were trained with standardized q_values, so ensure
                 ## that the predictions have the same mean and standard deviation as
                 ## the current batch of q_values
 
-            raise NotImplementedError
-            values = TODO
+            mean = np.mean(q_values)
+            std = np.std(q_values)
+            std = std if std !=0 else 1
+            values = values_normalized * std + mean
 
             if self.gae_lambda is not None:
                 ## append a dummy T+1 value for simpler recursive calculation
@@ -118,22 +131,26 @@ class PGAgent(BaseAgent):
                 advantages = np.zeros(batch_size + 1)
 
                 for i in reversed(range(batch_size)):
-                    ## TODO: recursively compute advantage estimates starting from
+                    ## DONE: recursively compute advantage estimates starting from
                         ## timestep T.
                     ## HINT 1: use terminals to handle edge cases. terminals[i]
                         ## is 1 if the state is the last in its trajectory, and
                         ## 0 otherwise.
                     ## HINT 2: self.gae_lambda is the lambda value in the
                         ## GAE formula
-                    raise NotImplementedError
+                    if terminals[i]:
+                        delta_t = rewards[i] - values[i]
+                    else:
+                        delta_t = rewards[i] + self.gamma * values[i+1] - values[i]
+                    advantages[i] = delta_t + self.gamma * self.gae_lambda * advantages[i+1]
 
                 # remove dummy advantage
                 advantages = advantages[:-1]
 
             else:
-                ## TODO: compute advantage estimates using q_values, and values as baselines
+                ## DONE: compute advantage estimates using q_values, and values as baselines
                 # raise NotImplementedError
-                advantages = TODO
+                advantages = q_values - values
 
         # Else, just set the advantage to [Q]
         else:
@@ -141,11 +158,13 @@ class PGAgent(BaseAgent):
 
         # Normalize the resulting advantages
         if self.standardize_advantages:
-            ## TODO: standardize the advantages to have a mean of zero
+            ## DONE: standardize the advantages to have a mean of zero
             ## and a standard deviation of one
-
-            raise NotImplementedError
-            advantages = TODO
+            mean = np.mean(advantages)
+            std = np.std(advantages)
+            if std != 0: 
+                advantages = (advantages - mean) / std
+            else: advantages = advantages - mean
 
         return advantages
 
@@ -171,8 +190,10 @@ class PGAgent(BaseAgent):
             Output: array where each index t contains sum_{t'=0}^T gamma^t' r_{t'}
         """
 
-        # TODO: create discounted_returns
-        raise NotImplementedError
+        # DONE: create discounted_returns
+        gammas = self.gamma ** np.arange(len(rewards))
+        total_discounted_return = np.sum(rewards * gammas)
+        discounted_returns = np.full(len(rewards), total_discounted_return)
 
         return discounted_returns
 
@@ -183,9 +204,14 @@ class PGAgent(BaseAgent):
             -and returns an array where the entry in each index t' is sum_{t'=t}^T gamma^(t'-t) * r_{t'}
         """
 
-        # TODO: create `discounted_cumsums`
+        # DONE: create `discounted_cumsums`
         # HINT: it is possible to write a vectorized solution, but a solution
             # using a for loop is also fine
-        raise NotImplementedError
-
+        
+        cumsum = 0
+        discounted_cumsums = np.zeros(len(rewards))
+        for i in range(1,len(rewards)+1):
+            cumsum *= self.gamma
+            cumsum += rewards[len(rewards)-i]
+            discounted_cumsums[len(rewards)-i] = cumsum
         return discounted_cumsums
