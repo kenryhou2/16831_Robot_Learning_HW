@@ -18,6 +18,7 @@ class PGAgent(BaseAgent):
         self.nn_baseline = self.agent_params['nn_baseline']
         self.reward_to_go = self.agent_params['reward_to_go']
         self.gae_lambda = self.agent_params['gae_lambda']
+        self.num_gradient_steps = self.agent_params.get('num_gradient_steps', 1)
 
         # actor/policy
         self.actor = MLPPolicyPG(
