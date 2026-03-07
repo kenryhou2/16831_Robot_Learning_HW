@@ -20,6 +20,8 @@ from rob831.infrastructure.dqn_utils import (
 )
 from rob831.infrastructure.monitor import Monitor
 
+#HW3
+
 # how many rollouts to save as videos to tensorboard
 MAX_NVIDEO = 2
 MAX_VIDEO_LEN = 40 # we overwrite this in the code below
