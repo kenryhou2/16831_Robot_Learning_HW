@@ -124,6 +124,25 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
 
 
 class MLPPolicyAC(MLPPolicy):
+
     def update(self, observations, actions, adv_n=None):
         # TODO: update the policy and return the loss
+        
+        #convert to pytorch tensors
+        obs = ptu.from_numpy(observations)
+        acts = ptu.from_numpy(actions)
+        advs = ptu.from_numpy(adv_n)
+
+        #action distribution for each observation
+        action_dist = self.forward(obs) # observations -> (batch_size, obs_dim)
+        
+        # log probabilities of the actions taken
+        log_probs = action_dist.log_prob(acts) # (batch_size,)
+        # Minimize the loss function defined by the policy gradient theorem
+        
+        loss = -(log_probs * advs).sum()
+        #clear gradients, compute gradients, and perform a step of optimization
+        self.optimizer.zero_grad()
+        loss.backward()
+        self.optimizer.step()
         return loss.item()

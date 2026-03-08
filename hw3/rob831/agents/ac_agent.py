@@ -34,16 +34,22 @@ class ACAgent(BaseAgent):
         # TODO Implement the following pseudocode:
         # for agent_params['num_critic_updates_per_agent_update'] steps,
         #     update the critic
+        total_critic_loss = 0
+        for step in range(self.agent_params['num_critic_updates_per_agent_update']):
+            total_critic_loss += self.critic.update(ob_no, ac_na, next_ob_no, re_n, terminal_n)
 
         # advantage = estimate_advantage(...)
+        advantage = self.estimate_advantage(ob_no, next_ob_no, re_n, terminal_n)
 
         # for agent_params['num_actor_updates_per_agent_update'] steps,
         #     update the actor
+        total_actor_loss = 0
+        for step in range(self.agent_params['num_actor_updates_per_agent_update']):
+            total_actor_loss += self.actor.update(ob_no, ac_na, advantage)
 
         loss = OrderedDict()
-        loss['Loss_Critic'] = TODO
-        loss['Loss_Actor'] = TODO
-
+        loss['Loss_Critic'] = total_critic_loss / self.agent_params['num_critic_updates_per_agent_update']
+        loss['Loss_Actor'] = total_actor_loss / self.agent_params['num_actor_updates_per_agent_update']
         return loss
 
     def estimate_advantage(self, ob_no, next_ob_no, re_n, terminal_n):
@@ -53,10 +59,18 @@ class ACAgent(BaseAgent):
         # 3) estimate the Q value as Q(s, a) = r(s, a) + gamma*V(s')
         # HINT: Remember to cut off the V(s') term (ie set it to 0) at terminal states (ie terminal_n=1)
         # 4) calculate advantage (adv_n) as A(s, a) = Q(s, a) - V(s)
-        adv_n = TODO
+        Vals = self.critic.forward_np(ob_no)
+        next_Vals = self.critic.forward_np(next_ob_no)
+        Qvals = re_n + self.gamma * next_Vals * (1 - terminal_n)
+        adv_n = Qvals - Vals
 
         if self.standardize_advantages:
-            adv_n = TODO
+            adv_mean = np.mean(adv_n)
+            adv_std = np.std(adv_n)
+            if adv_std > 1e-8:
+                adv_n = (adv_n - adv_mean) / adv_std
+            else:
+                adv_n = adv_n - adv_mean
         return adv_n
 
     def add_to_replay_buffer(self, paths):
