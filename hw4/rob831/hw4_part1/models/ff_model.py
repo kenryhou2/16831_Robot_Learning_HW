@@ -137,13 +137,12 @@ class FFModel(nn.Module, BaseModel):
              - 'delta_std'
         :return:
         """
-        target = # TODO(Q1) compute the normalized target for the model.
         obs = ptu.from_numpy(observations)
         acs = ptu.from_numpy(actions)
         next_obs = ptu.from_numpy(next_observations)
         stats = {k: ptu.from_numpy(v) for k, v in data_statistics.items()}
         delta = next_obs - obs
-        target = normalize(delta, stats['delta_mean'], stats['delta_std'])
+        target = normalize(delta, stats['delta_mean'], stats['delta_std']) #TODO(Q1) compute the normalized target for the model.
         # Hint: you should use `data_statistics['delta_mean']` and
         # `data_statistics['delta_std']`, which keep track of the mean
         # and standard deviation of the model.
