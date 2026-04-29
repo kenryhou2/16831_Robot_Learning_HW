@@ -1,0 +1,310 @@
+Q5 cem 4 (hkou@andrew) 
+######################## 
+
+logging outputs to  /content/hw4_part1_16831/homework_spring2026/hw4/data/hw4_q5_cheetah_cem_2_cheetah-hw4_part1-v0_01-04-2026_02-01-24 
+
+######################## 
+
+GPU not detected. Defaulting to CPU. 
+
+Using action sampling strategy: cem 
+
+CEM params: alpha=1.0, num_elites=5, iterations=2 
+
+  
+
+  
+
+********** Iteration 0 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+/usr/local/lib/python3.12/dist-packages/gym/core.py:317: DeprecationWarning: WARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future. 
+
+  deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/wrappers/step_api_compatibility.py:39: DeprecationWarning: WARN: Initializing environment in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future. 
+
+  deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/core.py:256: DeprecationWarning: WARN: Function `env.seed(seed)` is marked as deprecated and will be removed in the future. Please use `env.reset(seed=seed)` instead. 
+
+  deprecation( 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 123.30805969238281 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 123.30805969238281 
+
+Eval_MinReturn : 123.30805969238281 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : -2501.908447265625 
+
+Train_StdReturn : 326.896728515625 
+
+Train_MaxReturn : -2060.5048828125 
+
+Train_MinReturn : -3182.69873046875 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 5010 
+
+TimeSinceStart : 326.0188751220703 
+
+Training Loss : 0.06371137499809265 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 1 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     1002 / 800 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 183.91519165039062 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 183.91519165039062 
+
+Eval_MinReturn : 183.91519165039062 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 140.52780151367188 
+
+Train_StdReturn : 13.639015197753906 
+
+Train_MaxReturn : 154.16680908203125 
+
+Train_MinReturn : 126.88877868652344 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 6012 
+
+TimeSinceStart : 1122.7337498664856 
+
+Training Loss : 0.07315047830343246 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 2 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     1002 / 800 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 262.56549072265625 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 262.56549072265625 
+
+Eval_MinReturn : 262.56549072265625 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 213.8573760986328 
+
+Train_StdReturn : 3.7599029541015625 
+
+Train_MaxReturn : 217.61727905273438 
+
+Train_MinReturn : 210.09747314453125 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 7014 
+
+TimeSinceStart : 1919.706866979599 
+
+Training Loss : 0.07259047031402588 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 3 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     1002 / 800 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 237.8312225341797 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 237.8312225341797 
+
+Eval_MinReturn : 237.8312225341797 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 215.34788513183594 
+
+Train_StdReturn : 10.168106079101562 
+
+Train_MaxReturn : 225.5159912109375 
+
+Train_MinReturn : 205.17977905273438 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 8016 
+
+TimeSinceStart : 2738.9536259174347 
+
+Training Loss : 0.07268909364938736 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 4 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     1002 / 800 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 280.54266357421875 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 280.54266357421875 
+
+Eval_MinReturn : 280.54266357421875 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 271.911376953125 
+
+Train_StdReturn : 6.08740234375 
+
+Train_MaxReturn : 277.998779296875 
+
+Train_MinReturn : 265.823974609375 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 9018 
+
+TimeSinceStart : 3548.520567893982 
+
+Training Loss : 0.06921932846307755 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 

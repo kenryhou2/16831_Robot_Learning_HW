@@ -1,0 +1,424 @@
+Q4 Horizon 5 (hkou@andrew)
+########################
+logging outputs to  /content/hw4_part1_16831/homework_spring2026/hw4/data/hw4_q4_reacher_horizon5_reacher-hw4_part1-v0_31-03-2026_20-13-53
+########################
+Using GPU id 0
+Using action sampling strategy: random
+ 
+ 
+********** Iteration 0 ************
+ 
+Collecting data to be used for training...
+At timestep:     5025 / 5000
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -1105.443115234375
+Eval_StdReturn : 93.39763641357422
+Eval_MaxReturn : -1012.0455322265625
+Eval_MinReturn : -1198.8408203125
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -1860.1016845703125
+Train_StdReturn : 332.0240478515625
+Train_MaxReturn : -1283.0159912109375
+Train_MinReturn : -2515.0615234375
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 5025
+TimeSinceStart : 15.304490566253662
+Training Loss : 0.13796578347682953
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 1 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -867.9177856445312
+Eval_StdReturn : 88.87969970703125
+Eval_MaxReturn : -779.0380859375
+Eval_MinReturn : -956.7974853515625
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -1075.6455078125
+Train_StdReturn : 252.32232666015625
+Train_MaxReturn : -656.8539428710938
+Train_MinReturn : -1324.9837646484375
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 5829
+TimeSinceStart : 39.93434453010559
+Training Loss : 0.1157274842262268
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 2 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -891.6104125976562
+Eval_StdReturn : 60.35626220703125
+Eval_MaxReturn : -831.254150390625
+Eval_MinReturn : -951.9666748046875
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -814.489013671875
+Train_StdReturn : 154.25869750976562
+Train_MaxReturn : -594.3009033203125
+Train_MinReturn : -1022.908203125
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 6633
+TimeSinceStart : 64.72258377075195
+Training Loss : 0.0983869656920433
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 3 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -689.1759033203125
+Eval_StdReturn : 105.056640625
+Eval_MaxReturn : -584.1192626953125
+Eval_MinReturn : -794.2325439453125
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -877.0794677734375
+Train_StdReturn : 221.06947326660156
+Train_MaxReturn : -591.7000732421875
+Train_MinReturn : -1212.5936279296875
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 7437
+TimeSinceStart : 89.84190726280212
+Training Loss : 0.09180927276611328
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 4 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -650.1597290039062
+Eval_StdReturn : 96.0994873046875
+Eval_MaxReturn : -554.0602416992188
+Eval_MinReturn : -746.2592163085938
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -550.0869750976562
+Train_StdReturn : 42.53499984741211
+Train_MaxReturn : -499.163330078125
+Train_MinReturn : -610.126220703125
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 8241
+TimeSinceStart : 115.0479838848114
+Training Loss : 0.08963733166456223
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 5 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -436.59515380859375
+Eval_StdReturn : 13.733413696289062
+Eval_MaxReturn : -422.8617248535156
+Eval_MinReturn : -450.32855224609375
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -591.520751953125
+Train_StdReturn : 126.834716796875
+Train_MaxReturn : -453.9779052734375
+Train_MinReturn : -772.9678955078125
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 9045
+TimeSinceStart : 139.52460384368896
+Training Loss : 0.08734002709388733
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 6 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -655.0006103515625
+Eval_StdReturn : 46.08056640625
+Eval_MaxReturn : -608.9200439453125
+Eval_MinReturn : -701.0811767578125
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -487.5964050292969
+Train_StdReturn : 100.56603240966797
+Train_MaxReturn : -378.5393371582031
+Train_MinReturn : -591.3751220703125
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 9849
+TimeSinceStart : 164.27912163734436
+Training Loss : 0.0908990204334259
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 7 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -442.34881591796875
+Eval_StdReturn : 86.94879150390625
+Eval_MaxReturn : -355.4000244140625
+Eval_MinReturn : -529.297607421875
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -623.8132934570312
+Train_StdReturn : 147.51861572265625
+Train_MaxReturn : -477.3310241699219
+Train_MinReturn : -869.8082885742188
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 10653
+TimeSinceStart : 189.3549201488495
+Training Loss : 0.08896762132644653
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 8 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -467.2779541015625
+Eval_StdReturn : 79.12255859375
+Eval_MaxReturn : -388.1553955078125
+Eval_MinReturn : -546.4005126953125
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -420.4934387207031
+Train_StdReturn : 53.720130920410156
+Train_MaxReturn : -373.2964172363281
+Train_MinReturn : -506.7074279785156
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 11457
+TimeSinceStart : 214.5680274963379
+Training Loss : 0.09228739887475967
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 9 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -578.687744140625
+Eval_StdReturn : 129.742431640625
+Eval_MaxReturn : -448.9453125
+Eval_MinReturn : -708.43017578125
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -425.1083068847656
+Train_StdReturn : 55.05775451660156
+Train_MaxReturn : -363.606689453125
+Train_MinReturn : -513.0715942382812
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 12261
+TimeSinceStart : 239.27341508865356
+Training Loss : 0.09626232832670212
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 10 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -415.7048034667969
+Eval_StdReturn : 65.80224609375
+Eval_MaxReturn : -349.9025573730469
+Eval_MinReturn : -481.5070495605469
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -559.3598022460938
+Train_StdReturn : 281.01922607421875
+Train_MaxReturn : -345.4070129394531
+Train_MinReturn : -1042.394775390625
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 13065
+TimeSinceStart : 263.8806936740875
+Training Loss : 0.09751421213150024
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 11 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -423.33087158203125
+Eval_StdReturn : 39.312713623046875
+Eval_MaxReturn : -384.0181579589844
+Eval_MinReturn : -462.6435852050781
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -535.1323852539062
+Train_StdReturn : 216.54345703125
+Train_MaxReturn : -285.59161376953125
+Train_MinReturn : -875.3997192382812
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 13869
+TimeSinceStart : 288.7996768951416
+Training Loss : 0.09815897792577744
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 12 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -451.41357421875
+Eval_StdReturn : 150.4037322998047
+Eval_MaxReturn : -301.0098571777344
+Eval_MinReturn : -601.8173217773438
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -448.1611633300781
+Train_StdReturn : 45.06748962402344
+Train_MaxReturn : -397.9245300292969
+Train_MinReturn : -517.4471435546875
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 14673
+TimeSinceStart : 314.2430419921875
+Training Loss : 0.09970211982727051
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 13 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -354.8204345703125
+Eval_StdReturn : 70.9688720703125
+Eval_MaxReturn : -283.8515625
+Eval_MinReturn : -425.789306640625
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -481.40301513671875
+Train_StdReturn : 86.02607727050781
+Train_MaxReturn : -426.7051086425781
+Train_MinReturn : -630.0932006835938
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 15477
+TimeSinceStart : 339.52239871025085
+Training Loss : 0.10172342509031296
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...
+ 
+ 
+ 
+ 
+********** Iteration 14 ************
+ 
+Collecting data to be used for training...
+At timestep:     804 / 800
+Training agent...
+ 
+Beginning logging procedure...
+ 
+Collecting data for eval...
+Eval_AverageReturn : -415.181884765625
+Eval_StdReturn : 51.83979797363281
+Eval_MaxReturn : -363.34210205078125
+Eval_MinReturn : -467.0216979980469
+Eval_AverageEpLen : 201.0
+Train_AverageReturn : -344.6116027832031
+Train_StdReturn : 31.785865783691406
+Train_MaxReturn : -313.03411865234375
+Train_MinReturn : -397.5681457519531
+Train_AverageEpLen : 201.0
+Train_EnvstepsSoFar : 16281
+TimeSinceStart : 363.7869322299957
+Training Loss : 0.10297894477844238
+Initial_DataCollection_AverageReturn : -1860.1016845703125
+Done logging...

@@ -308,7 +308,7 @@ class RL_Trainer(object):
         self.fig = plt.figure()
 
         # sample actions
-        action_sequence = self.agent.actor.sample_action_sequences(num_sequences=1, horizon=100) #20 reacher
+        action_sequence = self.agent.actor.sample_action_sequences(num_sequences=1, horizon=10) #20 reacher
         action_sequence = action_sequence[0]
 
         # calculate and log model prediction error

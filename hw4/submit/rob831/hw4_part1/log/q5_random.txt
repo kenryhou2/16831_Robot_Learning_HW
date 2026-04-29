@@ -1,0 +1,331 @@
+ 
+
+CEM 
+
+Q5 cheetah random (koulkidd): 
+
+ 
+
+######################## 
+
+logging outputs to  /content/hw_16831/homework_spring2026/hw4/data/hw4_q5_cheetah_random_cheetah-hw4_part1-v0_01-04-2026_00-35-59 
+
+######################## 
+
+GPU not detected. Defaulting to CPU. 
+
+/usr/local/lib/python3.12/dist-packages/gym/core.py:317: DeprecationWarning: WARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future. 
+
+  deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/wrappers/step_api_compatibility.py:39: DeprecationWarning: WARN: Initializing environment in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future. 
+
+  deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/core.py:256: DeprecationWarning: WARN: Function `env.seed(seed)` is marked as deprecated and will be removed in the future. Please use `env.reset(seed=seed)` instead. 
+
+  deprecation( 
+
+Using action sampling strategy: random 
+
+  
+
+  
+
+********** Iteration 0 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+/usr/local/lib/python3.12/dist-packages/gym/utils/seeding.py:53: DeprecationWarning: WARN: Function `rng.randn(*size)` is marked as deprecated and will be removed in the future. Please use `rng.standard_normal(size)` instead. 
+
+  deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/utils/passive_env_checker.py:227: DeprecationWarning: WARN: Core environment is written in old step API which returns one bool instead of two. It is recommended to rewrite the environment with new step API.  
+
+  logger.deprecation( 
+
+/usr/local/lib/python3.12/dist-packages/gym/utils/passive_env_checker.py:234: UserWarning: WARN: Expects `done` signal to be a boolean, actual type: <class 'numpy.float64'> 
+
+  logger.warn( 
+
+/usr/local/lib/python3.12/dist-packages/jupyter_client/session.py:203: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC). 
+
+  return datetime.utcnow().replace(tzinfo=utc) 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 97.0221939086914 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 97.0221939086914 
+
+Eval_MinReturn : 97.0221939086914 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : -2501.908447265625 
+
+Train_StdReturn : 326.896728515625 
+
+Train_MaxReturn : -2060.5048828125 
+
+Train_MinReturn : -3182.69873046875 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 5010 
+
+TimeSinceStart : 151.78758239746094 
+
+Training Loss : 0.027537429705262184 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 1 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 252.1226043701172 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 252.1226043701172 
+
+Eval_MinReturn : 252.1226043701172 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 91.04512023925781 
+
+Train_StdReturn : 19.444692611694336 
+
+Train_MaxReturn : 125.12504577636719 
+
+Train_MinReturn : 51.657073974609375 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 10020 
+
+TimeSinceStart : 759.0313611030579 
+
+Training Loss : 0.05882004275918007 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 2 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 224.6400146484375 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 224.6400146484375 
+
+Eval_MinReturn : 224.6400146484375 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 193.04193115234375 
+
+Train_StdReturn : 24.29046630859375 
+
+Train_MaxReturn : 231.4177703857422 
+
+Train_MinReturn : 157.53213500976562 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 15030 
+
+TimeSinceStart : 1365.704977273941 
+
+Training Loss : 0.07027284801006317 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 3 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 227.59390258789062 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 227.59390258789062 
+
+Eval_MinReturn : 227.59390258789062 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 220.01272583007812 
+
+Train_StdReturn : 29.24308204650879 
+
+Train_MaxReturn : 263.8671875 
+
+Train_MinReturn : 173.7184600830078 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 20040 
+
+TimeSinceStart : 1969.9595012664795 
+
+Training Loss : 0.07364185154438019 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
+
+  
+
+  
+
+  
+
+  
+
+********** Iteration 4 ************ 
+
+  
+
+Collecting data to be used for training... 
+
+At timestep:     5010 / 5000 
+
+Training agent... 
+
+  
+
+Beginning logging procedure... 
+
+  
+
+Collecting data for eval... 
+
+INFO:tensorboardX.summary:Summary name Training Loss is illegal; using Training_Loss instead. 
+
+Eval_AverageReturn : 195.89523315429688 
+
+Eval_StdReturn : 0.0 
+
+Eval_MaxReturn : 195.89523315429688 
+
+Eval_MinReturn : 195.89523315429688 
+
+Eval_AverageEpLen : 501.0 
+
+Train_AverageReturn : 223.6120147705078 
+
+Train_StdReturn : 26.955053329467773 
+
+Train_MaxReturn : 267.8935546875 
+
+Train_MinReturn : 174.9635772705078 
+
+Train_AverageEpLen : 501.0 
+
+Train_EnvstepsSoFar : 25050 
+
+TimeSinceStart : 2570.285488128662 
+
+Training Loss : 0.07425853610038757 
+
+Initial_DataCollection_AverageReturn : -2501.908447265625 
+
+Done logging... 
